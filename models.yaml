@@ -1,18 +1,69 @@
-# Models to probe. `reasoning` is optional and provider-specific:
-#   gemini:    off | low | medium | high   (off => thinking_budget=0)
-#   openai:    minimal | low | medium | high
-#   anthropic: (ignored for now)
-# Omit `reasoning` to use the provider default.
+# Models to probe. Only the LOW-LATENCY tier that makes sense as a Home Assistant
+# voice agent is listed — flagship/creative tiers (Opus, Pro, Sonnet, Fable,
+# gpt-5.x, thinking models) are deliberately excluded: they are not built for fast
+# response time and nobody runs them for live voice control.
 #
-# Note: gemini-3.8-flash reasoning=low/off was tested and did NOT reduce latency
-# (it stays ~3.5-4.7s vs ~0.7s for the lite model), so those variants were dropped.
+# `reasoning` is optional and provider-specific:
+#   gemini: off | low | medium | high   openai: minimal | low | medium | high
+# (gemini-3.8-flash low/off was tested and did NOT reduce latency — kept as the one
+#  thinking "flash" reference.)
 models:
-  - name: gemini-3.5-flash-lite
-    provider: gemini
-    model: gemini-3.5-flash-lite
+  # --- Anthropic (Haiku = fast tier) ---
+  - name: claude-haiku-5-5
+    provider: anthropic
+    model: claude-haiku-5-5
+  - name: claude-haiku-4-5
+    provider: anthropic
+    model: claude-haiku-4-5-20251001
+  - name: claude-sonnet-5-5  # capable tier, included on request (slower than Haiku)
+    provider: anthropic
+    model: claude-sonnet-5-5
+
+  # --- OpenAI (mini / nano) ---
   - name: gpt-5.4-mini
     provider: openai
     model: gpt-5.4-mini
+  - name: gpt-5.4-nano
+    provider: openai
+    model: gpt-5.4-nano
+  - name: gpt-5-mini
+    provider: openai
+    model: gpt-5-mini
+  - name: gpt-5-nano
+    provider: openai
+    model: gpt-5-nano
+
+  # --- Google (flash / flash-lite) ---
+  - name: gemini-3.5-flash-lite
+    provider: gemini
+    model: gemini-3.5-flash-lite
+  - name: gemini-2.5-flash-lite
+    provider: gemini
+    model: gemini-2.5-flash-lite
+  - name: gemini-3.1-flash-lite
+    provider: gemini
+    model: gemini-3.1-flash-lite
+  - name: gemini-2.5-flash
+    provider: gemini
+    model: gemini-2.5-flash
+  - name: gemini-3.5-flash
+    provider: gemini
+    model: gemini-3.5-flash
   - name: gemini-3.8-flash
     provider: gemini
     model: gemini-3.8-flash
+
+  # --- Competitors via OpenRouter (needs openrouter_api_key) ---
+  - name: deepseek-chat-v3.1
+    provider: openrouter
+    model: deepseek/deepseek-chat-v3.1
+  - name: llama-3.3-70b
+    provider: openrouter
+    model: meta-llama/llama-3.3-70b-instruct
+  - name: mistral-small-3.2
+    provider: openrouter
+    model: mistralai/mistral-small-3.2-24b-instruct
+  - name: qwen3.8-flash
+    provider: openrouter
+    model: qwen/qwen3.8-flash
+  # (x-ai/grok-* not available on this OpenRouter account)

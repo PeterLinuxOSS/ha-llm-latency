@@ -98,6 +98,29 @@ def _openai_caller(entry: dict):
     return call
 
 
+def _openrouter_caller(entry: dict):
+    """OpenAI-compatible gateway — one key unlocks Grok, DeepSeek, Llama, Qwen, Mistral, ..."""
+    import openai
+
+    client = openai.OpenAI(
+        api_key=_load_secret("openrouter_api_key"),
+        base_url="https://openrouter.ai/api/v1",
+    )
+    model = entry["model"]
+
+    def call(prompt: str) -> None:
+        client.chat.completions.create(
+            model=model,
+            max_tokens=200,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": prompt},
+            ],
+        )
+
+    return call
+
+
 def _anthropic_caller(entry: dict):
     import anthropic
 
@@ -119,6 +142,7 @@ ADAPTERS = {
     "gemini": _gemini_caller,
     "openai": _openai_caller,
     "anthropic": _anthropic_caller,
+    "openrouter": _openrouter_caller,
 }
 
 

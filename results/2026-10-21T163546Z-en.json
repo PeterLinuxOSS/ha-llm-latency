@@ -1,0 +1,141 @@
+{
+  "timestamp": "2026-10-21T16:35:46+00:00",
+  "host": "ece6a78e-claude-terminal-pro",
+  "label": "en",
+  "system_prompt_chars": 114,
+  "prompts": 24,
+  "results": [
+    {
+      "name": "claude-haiku-5-5",
+      "provider": "anthropic",
+      "model": "claude-haiku-5-5",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 1.192,
+      "mean_s": 1.304,
+      "p95_s": 1.851,
+      "min_s": 0.966,
+      "max_s": 2.418
+    },
+    {
+      "name": "claude-haiku-4-5",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 1.56,
+      "mean_s": 1.314,
+      "p95_s": 1.738,
+      "min_s": 0.606,
+      "max_s": 2.031
+    },
+    {
+      "name": "gpt-5.4-mini",
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 0.756,
+      "mean_s": 0.763,
+      "p95_s": 0.949,
+      "min_s": 0.567,
+      "max_s": 0.976
+    },
+    {
+      "name": "gpt-5.4-nano",
+      "provider": "openai",
+      "model": "gpt-5.4-nano",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 0.676,
+      "mean_s": 0.734,
+      "p95_s": 1.032,
+      "min_s": 0.54,
+      "max_s": 1.074
+    },
+    {
+      "name": "gpt-5-mini",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 2.704,
+      "mean_s": 2.761,
+      "p95_s": 3.228,
+      "min_s": 2.291,
+      "max_s": 3.905
+    },
+    {
+      "name": "gpt-5-nano",
+      "provider": "openai",
+      "model": "gpt-5-nano",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 1.97,
+      "mean_s": 2.07,
+      "p95_s": 2.748,
+      "min_s": 1.721,
+      "max_s": 2.973
+    },
+    {
+      "name": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 0.585,
+      "mean_s": 0.566,
+      "p95_s": 0.709,
+      "min_s": 0.424,
+      "max_s": 0.744
+    },
+    {
+      "name": "gemini-3.1-flash-lite",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 0.705,
+      "mean_s": 0.713,
+      "p95_s": 0.898,
+      "min_s": 0.505,
+      "max_s": 0.956
+    },
+    {
+      "name": "gemini-2.5-flash",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 0.584,
+      "mean_s": 0.649,
+      "p95_s": 1.066,
+      "min_s": 0.437,
+      "max_s": 1.446
+    },
+    {
+      "name": "gemini-3.5-flash",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 2.247,
+      "mean_s": 2.411,
+      "p95_s": 3.464,
+      "min_s": 1.878,
+      "max_s": 4.856
+    },
+    {
+      "name": "gemini-3.8-flash",
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 3.654,
+      "mean_s": 3.838,
+      "p95_s": 4.872,
+      "min_s": 2.999,
+      "max_s": 6.816
+    }
+  ]
+}
