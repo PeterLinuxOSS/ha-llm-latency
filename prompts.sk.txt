@@ -1,0 +1,9 @@
+# Slovak Home Assistant control prompts, one per line. Lines starting with # are ignored.
+Vypni svetlo v kuchyni.
+Zapni svetlo v obývačke.
+Zatvor garážovú bránu.
+Zamkni vchodové dvere.
+Nastav svetlo v spálni na 30 %.
+Spusti vysávač v obývačke.
+Otvor zavlažovací ventil.
+Zapni svetlo na dvore.

@@ -167,29 +167,37 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--only", nargs="*", help="run only these model names")
     parser.add_argument("--runs", type=int, default=8, help="calls per model")
+    parser.add_argument("--prompts", default="prompts.txt", help="prompt file")
+    parser.add_argument("--label", help="language/prompt-set label (default: from filename)")
     args = parser.parse_args()
+
+    label = args.label
+    if not label:
+        stem = Path(args.prompts).stem  # "prompts" or "prompts.sk"
+        label = stem.split(".")[-1] if "." in stem else "en"
 
     models = yaml.safe_load((ROOT / "models.yaml").read_text())["models"]
     prompts = [
         line.strip()
-        for line in (ROOT / "prompts.txt").read_text().splitlines()
+        for line in (ROOT / args.prompts).read_text().splitlines()
         if line.strip() and not line.startswith("#")
     ]
     if args.only:
         models = [m for m in models if m["name"] in args.only]
 
-    print(f"Probing {len(models)} model(s), {args.runs} calls each, {len(prompts)} prompts")
+    print(f"Probing {len(models)} model(s) [{label}], {args.runs} calls each, {len(prompts)} prompts")
     results = [r for m in models if (r := probe_model(m, prompts, args.runs))]
 
     out = {
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "host": platform.node(),
+        "label": label,
         "system_prompt_chars": len(SYSTEM_PROMPT),
         "prompts": len(prompts),
         "results": results,
     }
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H%M%SZ")
-    path = ROOT / "results" / f"{stamp}.json"
+    path = ROOT / "results" / f"{stamp}-{label}.json"
     path.write_text(json.dumps(out, indent=2) + "\n")
     print(f"Wrote {path.relative_to(ROOT)} ({len(results)} models)")
 

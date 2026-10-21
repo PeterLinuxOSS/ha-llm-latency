@@ -58,10 +58,14 @@ def _runs() -> list[dict]:
     return out
 
 
+def _label(run: dict) -> str:
+    return run.get("label", "en")
+
+
 def _leaderboard(latest: dict) -> str:
     rows = sorted(latest["results"], key=lambda r: r["median_s"])
     lines = [
-        f"## Latest run — {latest['timestamp']}",
+        f"## Latest run — {_label(latest).upper()} — {latest['timestamp']}",
         "",
         f"_{latest['prompts']} prompts, {rows[0]['runs'] if rows else 0} calls per model._",
         "",
@@ -77,7 +81,8 @@ def _leaderboard(latest: dict) -> str:
     return "\n".join(lines)
 
 
-def _history(runs: list[dict]) -> str:
+def _history(runs: list[dict], label: str) -> str:
+    runs = [r for r in runs if _label(r) == label]
     if len(runs) < 2:
         return ""
     names: list[str] = []
@@ -85,7 +90,8 @@ def _history(runs: list[dict]) -> str:
         for r in run["results"]:
             if r["name"] not in names:
                 names.append(r["name"])
-    lines = ["## Median history", "", "| Date | " + " | ".join(names) + " |",
+    lines = [f"### Median history — {label.upper()}", "",
+             "| Date | " + " | ".join(names) + " |",
              "| --- |" + " --- |" * len(names)]
     for run in runs[-10:]:
         by_name = {r["name"]: r["median_s"] for r in run["results"]}
@@ -98,10 +104,21 @@ def main() -> None:
     runs = _runs()
     if not runs:
         raise SystemExit("No results yet. Run probe.py first.")
-    latest = runs[-1]
-    parts = [HEADER, _leaderboard(latest), _history(runs), METHOD, FOOTER]
+    # newest run per label, labels ordered by their newest run (newest first)
+    newest: dict[str, dict] = {}
+    for run in runs:
+        newest[_label(run)] = run  # runs sorted ascending, so last wins
+    labels = sorted(newest, key=lambda la: newest[la]["timestamp"], reverse=True)
+
+    parts = [HEADER]
+    for la in labels:
+        parts.append(_leaderboard(newest[la]))
+    histories = [h for la in labels if (h := _history(runs, la))]
+    if histories:
+        parts.append("## Median history\n\n" + "\n\n".join(histories))
+    parts += [METHOD, FOOTER]
     (ROOT / "README.md").write_text("\n\n".join(p for p in parts if p).strip() + "\n")
-    print("Wrote README.md")
+    print(f"Wrote README.md ({len(labels)} language(s): {', '.join(labels)})")
 
 
 if __name__ == "__main__":

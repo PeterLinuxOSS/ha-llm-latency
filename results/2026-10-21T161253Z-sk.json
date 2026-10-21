@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-10-21T16:12:53+00:00",
+  "host": "ece6a78e-claude-terminal-pro",
+  "label": "sk",
+  "system_prompt_chars": 114,
+  "prompts": 8,
+  "results": [
+    {
+      "name": "gemini-3.8-flash",
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "reasoning": "default",
+      "runs": 8,
+      "median_s": 4.614,
+      "mean_s": 4.772,
+      "p95_s": 6.201,
+      "min_s": 3.221,
+      "max_s": 6.28
+    },
+    {
+      "name": "gemini-3.8-flash-low",
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "reasoning": "low",
+      "runs": 8,
+      "median_s": 4.684,
+      "mean_s": 4.689,
+      "p95_s": 6.356,
+      "min_s": 2.153,
+      "max_s": 6.483
+    },
+    {
+      "name": "gemini-3.8-flash-off",
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "reasoning": "off",
+      "runs": 8,
+      "median_s": 4.696,
+      "mean_s": 4.131,
+      "p95_s": 5.95,
+      "min_s": 1.438,
+      "max_s": 6.131
+    },
+    {
+      "name": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "reasoning": "default",
+      "runs": 8,
+      "median_s": 0.627,
+      "mean_s": 0.616,
+      "p95_s": 0.726,
+      "min_s": 0.459,
+      "max_s": 0.743
+    },
+    {
+      "name": "gpt-5.4-mini",
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "reasoning": "default",
+      "runs": 8,
+      "median_s": 0.741,
+      "mean_s": 0.775,
+      "p95_s": 0.942,
+      "min_s": 0.65,
+      "max_s": 0.95
+    }
+  ]
+}
