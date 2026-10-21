@@ -18,38 +18,15 @@ python build_readme.py
 ```
 
 
-## Latest run — EN — 2026-10-21T16:14:46+00:00
+## Latest run — EN — 2026-10-21T16:22:40+00:00
 
-_8 prompts, 8 calls per model._
-
-| Model | Reasoning | Median | Mean | p95 | Min | Max |
-| --- | --- | --- | --- | --- | --- | --- |
-| gemini-3.5-flash-lite | default | 0.65s | 0.68s | 0.97s | 0.50s | 1.09s |
-| gpt-5.4-mini | default | 0.69s | 0.71s | 0.89s | 0.55s | 0.90s |
-| gemini-3.8-flash-low | low | 3.35s | 3.67s | 5.36s | 1.86s | 5.41s |
-| gemini-3.8-flash | default | 3.47s | 3.58s | 4.30s | 2.78s | 4.58s |
-| gemini-3.8-flash-off | off | 4.34s | 4.16s | 6.17s | 1.36s | 6.65s |
-
-## Latest run — SK — 2026-10-21T16:12:53+00:00
-
-_8 prompts, 8 calls per model._
+_24 prompts, 24 calls per model._
 
 | Model | Reasoning | Median | Mean | p95 | Min | Max |
 | --- | --- | --- | --- | --- | --- | --- |
-| gemini-3.5-flash-lite | default | 0.63s | 0.62s | 0.73s | 0.46s | 0.74s |
-| gpt-5.4-mini | default | 0.74s | 0.78s | 0.94s | 0.65s | 0.95s |
-| gemini-3.8-flash | default | 4.61s | 4.77s | 6.20s | 3.22s | 6.28s |
-| gemini-3.8-flash-low | low | 4.68s | 4.69s | 6.36s | 2.15s | 6.48s |
-| gemini-3.8-flash-off | off | 4.70s | 4.13s | 5.95s | 1.44s | 6.13s |
-
-## Median history
-
-### Median history — EN
-
-| Date | gemini-3.8-flash | gemini-3.8-flash-low | gemini-3.8-flash-off | gemini-3.5-flash-lite | gpt-5.4-mini |
-| --- | --- | --- | --- | --- | --- |
-| 2026-10-21 | 3.81s | 3.97s | 4.08s | 0.69s | 1.08s |
-| 2026-10-21 | 3.47s | 3.35s | 4.34s | 0.65s | 0.69s |
+| gemini-3.5-flash-lite | default | 0.59s | 0.61s | 0.87s | 0.42s | 0.98s |
+| gpt-5.4-mini | default | 0.69s | 1.06s | 1.15s | 0.58s | 8.03s |
+| gemini-3.8-flash | default | 3.72s | 3.83s | 4.73s | 2.75s | 5.12s |
 
 ## Method
 

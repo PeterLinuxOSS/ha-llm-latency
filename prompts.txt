@@ -1,9 +1,25 @@
-# Short Home Assistant control prompts, one per line. Lines starting with # are ignored.
+# Home Assistant control + question prompts, one per line. Lines starting with # are ignored.
 Turn off the kitchen light.
 Turn on the living room light.
+Dim the bedroom light to 20%.
+Set the office light to warm white.
 Close the garage door.
+Open the living room blinds.
+Close all the blinds.
 Lock the front door.
-Set the bedroom light to 30%.
+Unlock the back door.
 Start the vacuum in the living room.
+Send the vacuum back to its dock.
 Open the irrigation valve.
 Turn on the backyard light.
+Set the thermostat to 21 degrees.
+Turn off all the lights.
+Is the garage door open?
+What is the temperature in the bedroom?
+Are any lights still on?
+Play music in the kitchen.
+Pause the music.
+Set the volume to 40%.
+Turn on the bathroom fan.
+Arm the alarm in night mode.
+What time is it?

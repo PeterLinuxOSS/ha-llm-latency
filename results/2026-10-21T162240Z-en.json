@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-10-21T16:22:40+00:00",
+  "host": "ece6a78e-claude-terminal-pro",
+  "label": "en",
+  "system_prompt_chars": 114,
+  "prompts": 24,
+  "results": [
+    {
+      "name": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 0.593,
+      "mean_s": 0.609,
+      "p95_s": 0.866,
+      "min_s": 0.417,
+      "max_s": 0.978
+    },
+    {
+      "name": "gpt-5.4-mini",
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 0.694,
+      "mean_s": 1.059,
+      "p95_s": 1.154,
+      "min_s": 0.579,
+      "max_s": 8.029
+    },
+    {
+      "name": "gemini-3.8-flash",
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "reasoning": "default",
+      "runs": 24,
+      "median_s": 3.72,
+      "mean_s": 3.829,
+      "p95_s": 4.727,
+      "min_s": 2.75,
+      "max_s": 5.118
+    }
+  ]
+}
