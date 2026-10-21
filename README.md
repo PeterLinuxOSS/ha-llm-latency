@@ -18,32 +18,37 @@ python build_readme.py
 ```
 
 
-## Latest run — EN — 2026-10-21T16:35:46+00:00
+## Latest run — EN — 2026-10-21T16:48:23+00:00
 
 _24 prompts, 24 calls per model._
 
 | Model | Reasoning | Median | Mean | p95 | Min | Max |
 | --- | --- | --- | --- | --- | --- | --- |
-| gemini-2.5-flash | default | 0.58s | 0.65s | 1.07s | 0.44s | 1.45s |
-| gemini-3.5-flash-lite | default | 0.58s | 0.57s | 0.71s | 0.42s | 0.74s |
-| gpt-5.4-nano | default | 0.68s | 0.73s | 1.03s | 0.54s | 1.07s |
-| gemini-3.1-flash-lite | default | 0.70s | 0.71s | 0.90s | 0.51s | 0.96s |
-| gpt-5.4-mini | default | 0.76s | 0.76s | 0.95s | 0.57s | 0.98s |
-| claude-haiku-5-5 | default | 1.19s | 1.30s | 1.85s | 0.97s | 2.42s |
-| claude-haiku-4-5 | default | 1.56s | 1.31s | 1.74s | 0.61s | 2.03s |
-| gpt-5-nano | default | 1.97s | 2.07s | 2.75s | 1.72s | 2.97s |
-| gemini-3.5-flash | default | 2.25s | 2.41s | 3.46s | 1.88s | 4.86s |
-| gpt-5-mini | default | 2.70s | 2.76s | 3.23s | 2.29s | 3.90s |
-| gemini-3.8-flash | default | 3.65s | 3.84s | 4.87s | 3.00s | 6.82s |
+| gemini-3.5-flash-lite | default | 0.52s | 0.55s | 0.68s | 0.42s | 0.76s |
+| mistral-small-3.2 | default | 0.57s | 0.62s | 0.92s | 0.40s | 1.08s |
+| gemini-2.5-flash | default | 0.58s | 0.68s | 1.29s | 0.45s | 1.30s |
+| gemini-3.1-flash-lite | default | 0.70s | 0.74s | 1.02s | 0.54s | 1.16s |
+| gpt-5.4-nano | default | 0.71s | 0.75s | 1.15s | 0.55s | 1.19s |
+| llama-3.3-70b | default | 0.72s | 0.88s | 1.52s | 0.19s | 1.75s |
+| gpt-5.4-mini | default | 0.75s | 0.89s | 1.57s | 0.53s | 2.06s |
+| claude-haiku-5-5 | default | 1.22s | 1.28s | 1.76s | 0.93s | 2.03s |
+| gpt-5-nano | default | 1.68s | 1.71s | 1.84s | 1.53s | 2.04s |
+| claude-haiku-4-5 | default | 1.68s | 1.47s | 1.98s | 0.60s | 2.04s |
+| deepseek-chat-v3.1 | default | 2.04s | 2.33s | 4.39s | 0.71s | 4.68s |
+| gemini-3.5-flash | default | 2.13s | 2.24s | 3.37s | 1.73s | 3.80s |
+| claude-sonnet-5-5 | default | 2.40s | 2.39s | 2.96s | 1.85s | 3.35s |
+| gpt-5-mini | default | 2.53s | 2.67s | 3.65s | 2.08s | 3.96s |
+| gemini-3.8-flash | default | 3.36s | 3.42s | 4.68s | 2.56s | 4.87s |
 
 ## Median history
 
 ### Median history — EN
 
-| Date | gemini-3.5-flash-lite | gpt-5.4-mini | gemini-3.8-flash | claude-haiku-5-5 | claude-haiku-4-5 | gpt-5.4-nano | gpt-5-mini | gpt-5-nano | gemini-3.1-flash-lite | gemini-2.5-flash | gemini-3.5-flash |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-10-21 | 0.59s | 0.69s | 3.72s |  |  |  |  |  |  |  |  |
-| 2026-10-21 | 0.58s | 0.76s | 3.65s | 1.19s | 1.56s | 0.68s | 2.70s | 1.97s | 0.70s | 0.58s | 2.25s |
+| Date | gemini-3.5-flash-lite | gpt-5.4-mini | gemini-3.8-flash | claude-haiku-5-5 | claude-haiku-4-5 | gpt-5.4-nano | gpt-5-mini | gpt-5-nano | gemini-3.1-flash-lite | gemini-2.5-flash | gemini-3.5-flash | claude-sonnet-5-5 | deepseek-chat-v3.1 | llama-3.3-70b | mistral-small-3.2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10-21 | 0.59s | 0.69s | 3.72s |  |  |  |  |  |  |  |  |  |  |  |  |
+| 2026-10-21 | 0.58s | 0.76s | 3.65s | 1.19s | 1.56s | 0.68s | 2.70s | 1.97s | 0.70s | 0.58s | 2.25s |  |  |  |  |
+| 2026-10-21 | 0.52s | 0.75s | 3.36s | 1.22s | 1.68s | 0.71s | 2.53s | 1.68s | 0.70s | 0.58s | 2.13s | 2.40s | 2.04s | 0.72s | 0.57s |
 
 ## Method
 
