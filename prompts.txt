@@ -1,0 +1,9 @@
+# Short Home Assistant control prompts, one per line. Lines starting with # are ignored.
+Turn off the kitchen light.
+Turn on the living room light.
+Close the garage door.
+Lock the front door.
+Set the bedroom light to 30%.
+Start the vacuum in the living room.
+Open the irrigation valve.
+Turn on the backyard light.
